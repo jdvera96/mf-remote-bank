@@ -1,0 +1,5 @@
+{
+  "name": "Bancos del Perú",
+  "description": "Una aplicación moderna para listar y visualizar información sobre los bancos nacionales de Perú utilizando la IA de Gemini para obtener datos actualizados.",
+  "requestFramePermissions": []
+}
