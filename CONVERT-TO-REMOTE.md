@@ -198,9 +198,7 @@ module.exports = withNativeFederation({
     (pkg) => pkg.startsWith('@angular/'),
     (pkg) => pkg.startsWith('@angular-devkit/'),
     // Ajusta según tu Remote (si aplica):
-    '@google/genai',
-    'tailwindcss',
-    'vite',
+    (pkg) => pkg.startsWith('@google/genai'),
     'typescript',
     'rxjs',
     'rxjs/ajax',

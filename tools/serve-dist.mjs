@@ -1,7 +1,6 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
 function getArg(name, fallback) {
   const idx = process.argv.indexOf(name);
@@ -10,7 +9,8 @@ function getArg(name, fallback) {
 }
 
 const dirArg = getArg('--dir', 'dist');
-const portArg = Number(getArg('--port', '4203'));
+const portArg = Number(getArg('--port', process.env.PORT ?? '4203'));
+const hostArg = getArg('--host', process.env.HOST ?? '0.0.0.0');
 const rootDir = path.resolve(process.cwd(), dirArg);
 
 if (!fs.existsSync(rootDir)) {
@@ -88,7 +88,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(portArg, '127.0.0.1', () => {
+server.listen(portArg, hostArg, () => {
   console.log(`[mf:serve] Sirviendo ${rootDir}`);
   console.log(`[mf:serve] http://localhost:${portArg}/`);
   console.log(`[mf:serve] remoteEntry: http://localhost:${portArg}/remoteEntry.json`);

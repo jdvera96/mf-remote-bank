@@ -6,7 +6,7 @@
     "dev": "ng serve",
     "build": "ng run app:esbuild:production",
     "preview": "ng serve --configuration=production",
-    "mf:build": "ng run app:build:production",
+    "mf:build": "ng run app:build:production && node tools/inline-importmap.mjs",
     "mf:serve": "node tools/serve-dist.mjs --dir dist --port 4203",
     "postinstall": "node tools/patch-native-federation.mjs"
   },
@@ -15,11 +15,12 @@
     "@google/genai": "^1.34.0",
     "@angular/core": "^21.0.0",
     "@angular/platform-browser": "^21.0.0",
-    "@angular/common": "^21.0.0",
-    "tailwindcss": "latest"
+    "@angular/common": "^21.0.0"
+  },
+  "optionalDependencies": {
+    "@oxc-parser/binding-win32-x64-msvc": "0.8.0"
   },
   "devDependencies": {
-    "@oxc-parser/binding-win32-x64-msvc": "0.8.0",
     "@angular-architects/native-federation": "^21.0.3",
     "@angular/build": "^21.0.0",
     "@angular/cli": "^21.0.0",
@@ -28,8 +29,6 @@
     "@angular-devkit/build-angular": "^21.0.0",
     "@types/node": "^22.14.0",
     "es-module-shims": "^2.6.0",
-    "tailwindcss": "latest",
-    "typescript": "~5.9.2",
-    "vite": "^6.2.0"
+    "typescript": "~5.9.2"
   }
 }
