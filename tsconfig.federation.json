@@ -22,7 +22,14 @@
   },
   "include": [
     "./index.tsx",
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "node_modules\\rxjs\\dist\\esm5\\operators\\index.js",
+    "node_modules\\@google\\genai\\dist\\web\\index.mjs",
+    "node_modules\\@google\\genai\\dist\\node\\index.mjs",
+    "node_modules\\tailwindcss\\dist\\plugin.mjs",
+    "node_modules\\tailwindcss\\dist\\default-theme.mjs",
+    "node_modules\\tailwindcss\\dist\\colors.mjs",
+    "node_modules\\tailwindcss\\dist\\flatten-color-palette.mjs"
   ],
   "angularCompilerOptions": {
     "disableTypeScriptVersionCheck": true

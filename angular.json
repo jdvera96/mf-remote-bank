@@ -9,7 +9,7 @@
       "sourceRoot": "./",
       "prefix": "app",
       "architect": {
-        "build": {
+        "esbuild": {
           "builder": "@angular/build:application",
           "options": {
             "outputPath": {
@@ -34,6 +34,21 @@
           },
           "defaultConfiguration": "production"
         },
+        "build": {
+          "builder": "@angular-architects/native-federation:build",
+          "options": {
+            "target": "app:esbuild:production"
+          },
+          "configurations": {
+            "production": {
+              "target": "app:esbuild:production"
+            },
+            "development": {
+              "target": "app:esbuild:development"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "serve": {
           "builder": "@angular/build:dev-server",
           "options": {
@@ -41,10 +56,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "app:build:production"
+              "buildTarget": "app:esbuild:production"
             },
             "development": {
-              "buildTarget": "app:build:development"
+              "buildTarget": "app:esbuild:development"
             }
           },
           "defaultConfiguration": "development"

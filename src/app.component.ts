@@ -3,7 +3,7 @@ import { BankService, Bank } from './services/bank.service';
 import { BankTableComponent } from './components/bank-table.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-bank-mfe',
   standalone: true,
   imports: [BankTableComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,

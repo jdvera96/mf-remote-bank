@@ -29,6 +29,30 @@ npm run build
 
 Salida en `dist/`.
 
+## Build MF Remote (Native Federation)
+
+```bash
+npm run mf:build
+```
+
+Salida en `dist/` (artefactos de federación incluidos).
+
+## Probar `remoteEntry.json` en local (como Remote para Shell)
+
+1) Construye el Remote:
+
+```bash
+npm run mf:build
+```
+
+2) Sirve `dist/` (incluye `remoteEntry.json`):
+
+```bash
+npm run mf:serve
+```
+
+Luego abre `http://localhost:4203/remoteEntry.json`.
+
 ## Notas (sin errores/warnings)
 
 - **TypeScript**: Angular 21 requiere **TypeScript 5.9+** (este proyecto usa `~5.9.2`).
