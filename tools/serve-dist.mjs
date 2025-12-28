@@ -9,7 +9,7 @@ function getArg(name, fallback) {
 }
 
 const dirArg = getArg('--dir', 'dist');
-const portArg = Number(getArg('--port', process.env.PORT ?? '4203'));
+const portArg = Number(getArg('--port', process.env.PORT ?? '8080'));
 const hostArg = getArg('--host', process.env.HOST ?? '0.0.0.0');
 const rootDir = path.resolve(process.cwd(), dirArg);
 

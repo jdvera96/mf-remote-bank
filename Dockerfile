@@ -42,9 +42,8 @@ COPY tools/serve-dist.mjs ./tools/serve-dist.mjs
 # Artefactos build
 COPY --from=build /app/dist ./dist
 
-ENV PORT=4203
-EXPOSE 4203
+EXPOSE 8080
 
-CMD ["node", "tools/serve-dist.mjs", "--dir", "dist", "--port", "4203"]
+CMD ["node", "tools/serve-dist.mjs", "--dir", "dist"]
 
 
